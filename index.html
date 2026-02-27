@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>RS6 Dashboard Profesional</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="search-header">
+            <h1>OPERATOR STATUS</h1>
+            <div class="search-box">
+                <input type="text" id="nombreBusqueda" placeholder="Ingrese nombre del jugador (ej: ImBrendyn)...">
+                <button onclick="buscarUsuario()">BUSCAR</button>
+            </div>
+        </header>
+
+        <section id="stats-section" class="hidden">
+            <div class="stats-grid">
+                <div class="stat-card highlight">
+                    <small>PLAYER</small>
+                    <h2 id="stat-name">-</h2>
+                </div>
+                <div class="stat-card">
+                    <small>TOTAL KILLS</small>
+                    <h2 id="stat-kills">0</h2>
+                </div>
+                <div class="stat-card">
+                    <small>WIN RATE</small>
+                    <h2 id="stat-winrate">0%</h2>
+                </div>
+                <div class="stat-card">
+                    <small>TOTAL XP</small>
+                    <h2 id="stat-xp">0</h2>
+                </div>
+            </div>
+
+            <div class="charts-section">
+                <div class="chart-wrapper">
+                    <h3>PRECISIÓN DE DISPARO</h3>
+                    <canvas id="precisionChart"></canvas>
+                </div>
+                <div class="chart-wrapper">
+                    <h3>RENDIMIENTO DE PARTIDAS</h3>
+                    <canvas id="winLossChart"></canvas>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

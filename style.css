@@ -1,0 +1,128 @@
+body {
+    background-color: #0b0e14;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.dashboard-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Estilo del Buscador */
+.search-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+input {
+    padding: 12px;
+    width: 300px;
+    background: #0d1117;
+    border: 1px solid #30363d;
+    color: white;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+    outline: none;
+}
+
+input:focus {
+    border-color: #00d4ff; /* Brilla al hacer clic para escribir */
+}
+
+button {
+    padding: 12px 25px;
+    background: #00d4ff;
+    border: none;
+    color: #0b0e14;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    background: #ffffff; /* Cambia a blanco al pasar el mouse */
+    box-shadow: 0 0 15px #00d4ff; /* Efecto de brillo cian */
+    transform: scale(1.05); /* Se agranda un poquito */
+}
+
+button:active {
+    transform: scale(0.98); /* Se hunde un poco al hacer clic */
+}
+
+/* Estilo de las Estadísticas */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: #161b22;
+    padding: 20px;
+    border-radius: 6px;
+    border-bottom: 3px solid #30363d;
+    text-align: center;
+    /* Transición suave para el efecto hover */
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px); /* Eleva la tarjeta */
+    background: #1c2128; /* Aclara un poco el fondo */
+    border-bottom-color: #00d4ff; /* El borde brilla en cian */
+    box-shadow: 0 10px 20px rgba(0, 212, 255, 0.1); /* Sombra suave de color */
+}
+
+.stat-card.highlight {
+    border-bottom-color: #00d4ff;
+}
+
+/* Estilo de los Gráficos */
+.charts-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.chart-wrapper {
+    background: #0d1117;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+}
+
+.hidden { display: none; }
+
+/* Animación de fundido */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#stats-section:not(.hidden) {
+    display: block; /* O el display que uses */
+    animation: fadeIn 0.6s ease-out;
+}
+
+#stat-name {
+    background: linear-gradient(90deg, #00d4ff, #ffffff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
